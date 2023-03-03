@@ -42,7 +42,7 @@ public GameObject heartPrefab;
         sheepSpawner.RemoveSheepFromList(gameObject);
         hitByHay = true; 
         runSpeed = 0;
-
+        SoundManager.Instance.PlaySheepHitClip();
         Destroy(gameObject, gotHayDestroyDelay);
         Instantiate(heartPrefab, transform.position + new Vector3(0, heartOffset, 0), Quaternion.identity);
         TweenScale tweenScale = gameObject.AddComponent<TweenScale>();
@@ -69,7 +69,8 @@ public GameObject heartPrefab;
         sheepSpawner.RemoveSheepFromList(gameObject);
         dropped = true;
         myRigidbody.isKinematic = false; 
-        myCollider.isTrigger = false; 
+        myCollider.isTrigger = false;
+        SoundManager.Instance.PlaySheepDroppedClip(); 
         Destroy(gameObject, dropDestroyDelay); 
     }
 }
