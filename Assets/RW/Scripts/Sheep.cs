@@ -48,6 +48,7 @@ public GameObject heartPrefab;
         TweenScale tweenScale = gameObject.AddComponent<TweenScale>();
         tweenScale.targetScale = 0; 
         tweenScale.timeToReachTarget = gotHayDestroyDelay;
+        GameStateManager.Instance.SavedSheep();
     }
 
 
@@ -66,11 +67,12 @@ public GameObject heartPrefab;
 
     private void Drop()
     {
-        sheepSpawner.RemoveSheepFromList(gameObject);
         dropped = true;
         myRigidbody.isKinematic = false; 
         myCollider.isTrigger = false;
         SoundManager.Instance.PlaySheepDroppedClip(); 
         Destroy(gameObject, dropDestroyDelay); 
+        GameStateManager.Instance.DroppedSheep();
+        sheepSpawner.RemoveSheepFromList(gameObject);
     }
 }
