@@ -16,6 +16,9 @@ public class Sheep : MonoBehaviour
 
     private SheepSpawner sheepSpawner;
 
+    public float heartOffset; 
+public GameObject heartPrefab; 
+
     public void SetSpawner(SheepSpawner spawner)
     {
         sheepSpawner = spawner;
@@ -41,6 +44,10 @@ public class Sheep : MonoBehaviour
         runSpeed = 0;
 
         Destroy(gameObject, gotHayDestroyDelay);
+        Instantiate(heartPrefab, transform.position + new Vector3(0, heartOffset, 0), Quaternion.identity);
+        TweenScale tweenScale = gameObject.AddComponent<TweenScale>();
+        tweenScale.targetScale = 0; 
+        tweenScale.timeToReachTarget = gotHayDestroyDelay;
     }
 
 
