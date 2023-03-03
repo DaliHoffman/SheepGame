@@ -340,8 +340,14 @@
 "Assets/RW/Scripts/Managers/UIManager.cs"
 "Assets/RW/Scripts/Move.cs"
 "Assets/RW/Scripts/Rotate.cs"
+"Assets/RW/Scripts/Shared/GameSettings.cs"
+"Assets/RW/Scripts/Shared/HayMachineColor.cs"
+"Assets/RW/Scripts/Shared/HayMachineSwitcher.cs"
 "Assets/RW/Scripts/Sheep.cs"
 "Assets/RW/Scripts/SheepSpawner.cs"
+"Assets/RW/Scripts/Title/ChangeColorOnMouseOver.cs"
+"Assets/RW/Scripts/Title/QuitButton.cs"
+"Assets/RW/Scripts/Title/StartButton.cs"
 "Assets/RW/Scripts/TweenScale.cs"
 -langversion:9.0
 
