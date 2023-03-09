@@ -8,7 +8,8 @@ public class Sheep : MonoBehaviour
     public float runSpeed; 
     public float gotHayDestroyDelay; 
     private bool hitByHay; 
-    private bool dropped; 
+    private bool dropped;
+    public float inc = 0.1f;
 
     public float dropDestroyDelay; 
     private Collider myCollider; 
@@ -17,11 +18,14 @@ public class Sheep : MonoBehaviour
     private SheepSpawner sheepSpawner;
 
     public float heartOffset; 
-public GameObject heartPrefab; 
+    public GameObject heartPrefab; 
 
     public void SetSpawner(SheepSpawner spawner)
     {
+        // int numSheepSpawned = sheepSpawner.sheepList.Count;
+        runSpeed += inc;
         sheepSpawner = spawner;
+    
     }
 
     // Start is called before the first frame update
