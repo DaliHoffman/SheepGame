@@ -20,6 +20,11 @@ public class UIManager : MonoBehaviour
     public void UpdateSheepSaved() 
     {
         sheepSavedText.text = GameStateManager.Instance.sheepSaved.ToString();
+        if (GameStateManager.Instance.sheepSaved > PlayerPrefs.GetInt("HighScore"))
+        {
+            PlayerPrefs.SetInt("HighScore", GameStateManager.Instance.sheepSaved);
+            HighScoreManager.Instance.highScore = GameStateManager.Instance.sheepSaved;
+        }
     }
 
     public void UpdateSheepDropped() 
