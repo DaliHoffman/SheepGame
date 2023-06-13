@@ -1,5 +1,4 @@
 // This script controls the movement and shooting behavior of a hay machine.
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,16 +7,12 @@ public class HayMachine : MonoBehaviour
 {
 
     public float movementSpeed;
-
     public float horizontalBoundary = 22;
-
     public GameObject hayBalePrefab; 
     public Transform haySpawnpoint; 
     public float shootInterval; 
     private float shootTimer; 
-
     public Transform modelParent; 
-
     public GameObject blueModelPrefab;
     public GameObject yellowModelPrefab;
     public GameObject redModelPrefab;
@@ -34,8 +29,7 @@ public class HayMachine : MonoBehaviour
          // Destroy the existing model if there is one.
         Destroy(modelParent.GetChild(0).gameObject); 
 
-
-          // Instantiate the model prefab based on the selected hay machine color.
+        // Instantiate the model prefab based on the selected hay machine color.
         switch (GameSettings.hayMachineColor) 
         {
             case HayMachineColor.Blue:
@@ -89,5 +83,4 @@ public class HayMachine : MonoBehaviour
         Instantiate(hayBalePrefab, haySpawnpoint.position, Quaternion.identity);
         SoundManager.Instance.PlaySheepHitClip();
     }
-
 }

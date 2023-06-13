@@ -1,5 +1,4 @@
 // This script destroys the game object it is attached to after a specified time.
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

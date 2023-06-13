@@ -7,29 +7,23 @@ using UnityEngine;
 
 public class Sheep : MonoBehaviour
 {
-
     public float runSpeed; 
     public float gotHayDestroyDelay; 
     private bool hitByHay; 
     private bool dropped;
     public float inc = 0.1f;
-
     public float dropDestroyDelay; 
     private Collider myCollider; 
     private Rigidbody myRigidbody; 
-
     private SheepSpawner sheepSpawner;
-
     public float heartOffset; 
     public GameObject heartPrefab; 
 
      // Set the sheep spawner reference.
     public void SetSpawner(SheepSpawner spawner)
     {
-        
         runSpeed += inc;
-        sheepSpawner = spawner;
-    
+        sheepSpawner = spawner;   
     }
 
     // Start is called before the first frame update

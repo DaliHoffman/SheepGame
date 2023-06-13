@@ -7,16 +7,13 @@ using UnityEngine;
 public class SheepSpawner : MonoBehaviour
 {
     public bool canSpawn = true;
-
     public GameObject sheepPrefab;
     public List<Transform> sheepSpawnPositions = new List<Transform>();
     public float timeBetweenSpawns = 2f;
     public float spawnRateIncrease = 0.05f; // increase in spawn rate every 60 seconds
     public float timeToIncreaseSpawnRate = 30f; // time interval to increase spawn rate
-
     private List<GameObject> sheepList = new List<GameObject>();
     private int numSheepSpawned = 0;
-
     private float timeSinceLastSpawn = 0f;
     private float timeSinceLastSpawnRateIncrease = 0f;
 
@@ -77,7 +74,6 @@ public class SheepSpawner : MonoBehaviour
         {
             Destroy(sheep);
         }
-
         sheepList.Clear();
     }
 }
