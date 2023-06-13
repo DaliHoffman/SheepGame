@@ -1,3 +1,6 @@
+// The Sheep script represents a sheep object in the game.
+// This includes how it interacts with other game objects and how it is used throughout the game
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,9 +23,10 @@ public class Sheep : MonoBehaviour
     public float heartOffset; 
     public GameObject heartPrefab; 
 
+     // Set the sheep spawner reference.
     public void SetSpawner(SheepSpawner spawner)
     {
-        // int numSheepSpawned = sheepSpawner.sheepList.Count;
+        
         runSpeed += inc;
         sheepSpawner = spawner;
     
@@ -41,6 +45,7 @@ public class Sheep : MonoBehaviour
         transform.Translate(Vector3.forward * runSpeed * Time.deltaTime);
     }
 
+    // Called when the sheep is hit by hay
     private void HitByHay()
     {
         sheepSpawner.RemoveSheepFromList(gameObject);
@@ -55,7 +60,7 @@ public class Sheep : MonoBehaviour
         GameStateManager.Instance.SavedSheep();
     }
 
-
+    // Called when the sheep enters a trigger collider
     private void OnTriggerEnter(Collider other) 
     {
         if (other.CompareTag("Hay") && !hitByHay) 
@@ -69,6 +74,7 @@ public class Sheep : MonoBehaviour
         }
     }
 
+    // Called when the sheep is dropped
     private void Drop()
     {
         dropped = true;

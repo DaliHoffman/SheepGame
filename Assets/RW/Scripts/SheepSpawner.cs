@@ -1,3 +1,5 @@
+// The SheepSpawner script is responsible for spawning sheep in the game.
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,7 +37,7 @@ public class SheepSpawner : MonoBehaviour
             timeSinceLastSpawnRateIncrease = 0f;
         }
     }
-
+    // Spawn a sheep at the specified spawn point
     private void SpawnSheep()
     {
         Vector3 randomPosition = sheepSpawnPositions[Random.Range(0, sheepSpawnPositions.Count)].position;
@@ -61,12 +63,14 @@ public class SheepSpawner : MonoBehaviour
             yield return null;
         }
     }
-
+    // Remove a sheep from the sheep list
     public void RemoveSheepFromList(GameObject sheep)
     {
         sheepList.Remove(sheep);
     }
 
+
+    // Removes all sheep from game
     public void DestroyAllSheep()
     {
         foreach (GameObject sheep in sheepList)

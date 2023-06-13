@@ -1,3 +1,4 @@
+// This script controls the movement of the hay bale
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,7 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+         // Move the hay bale in the specified direction and coordinate space
         transform.Translate(movementSpeed * Time.deltaTime, space);
     }
 }

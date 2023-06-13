@@ -1,10 +1,11 @@
+// The TweenScale script is responsible for scaling an object over time.
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TweenScale : MonoBehaviour
 {
-
+    // variables needed for the script
     public float targetScale; 
     public float timeToReachTarget; 
     private float startScale;  
@@ -18,6 +19,7 @@ public class TweenScale : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+         // If the scaling progress is less than 100%
         if (percentScaled < 1f) 
         {
             percentScaled += Time.deltaTime / timeToReachTarget; 
